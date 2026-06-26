@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Pickup Center</title>
-    <link rel="shortcut icon" href="Texas_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/Texas_logo.png" type="image/x-icon">
     <style>
         /* Root Variables */
 :root {
@@ -1049,14 +1049,14 @@ img {
     </style>
 </head>
 <body>
-    <!-- AQUI FICA O GOOGLE TAG MANAGER 
-    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18068378236&amp;cx=c&amp;gtm=4e66f0"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KQ39K9K6"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- AQUI FICA O GOOGLE TAG MANAGER -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KQ39K9K6');</script>
-    
-    FIM DO Google Tag Manager -->
+    })(window,document,'script','dataLayer','GTM-PJ66S6DZ');</script>
+    <!-- End Google Tag Manager -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1173,7 +1173,9 @@ img {
 
                 <div class="hero-image-container">
                     <div class="hero-image-wrapper">
-                        <img src="imgs/Foto_texas_pickup_center.png" alt="Oficina TEXAS Pickup Center Centro Automotivo">
+                        <img id="heroSlider"
+                            src="imgs/Foto_texas_pickup_center.png"
+                            alt="Oficina TEXAS Pickup Center Centro Automotivo">
                         <div class="hero-image-overlay"></div>
                     </div>
                     <div class="floating-badge">
@@ -1753,5 +1755,46 @@ img {
     }
 });
     </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJ66S6DZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const heroImage = document.getElementById("heroSlider");
+
+            const images = [
+                "imgs/Foto_texas_pickup_center.png",
+                "imgs/Imagem_principal_2.png",
+                "imgs/Imagem_principal_3.png"
+            ];
+
+            let current = 0;
+
+            heroImage.style.transition = "opacity 1s ease-in-out";
+
+            setInterval(() => {
+
+                heroImage.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    current++;
+                    if(current >= images.length){
+                        current = 0;
+                    }
+
+                    heroImage.src = images[current];
+
+                    heroImage.style.opacity = "1";
+
+                }, 1000);
+
+            }, 5000);
+
+    });
+</script>
 </body>
 </html>
